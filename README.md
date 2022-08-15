@@ -16,7 +16,16 @@ openssl req -newkey rsa:2048 -nodes -keyout private_key.pem -x509 -days 365 -out
         -subj "/C=DK/ST=Aalborg/L=Aalborg/O=pfrandsen/OU=Development/CN=pfrandsen.dk"
 openssl x509 -outform der -in certificate.pem -out public_key.der
 openssl x509 -in certificate.pem -pubkey > public_key.pem         
- ```
+```
+
+Use this instead?
+```bash
+openssl genrsa -out privatekey.pem 1024
+openssl req -new -x509 -key privatekey.pem -out publickey.cer -days 3650 \
+        -subj "/C=DK/ST=Aalborg/L=Aalborg/O=pfrandsen/OU=Development/CN=pfrandsen.dk"
+```
+
+
 
 | Field    | Meaning             | Example      |
 |----------|:-------------------:|--------------|
@@ -32,3 +41,9 @@ openssl x509 -in certificate.pem -pubkey > public_key.pem
 ## User Setup
 
 Set OAuth policies (users are pre-authorized etc.) and add Connected App to relevant profiles.
+
+## Tools
+
+https://oauthdebugger.com/debug
+https://jwt.io/
+
