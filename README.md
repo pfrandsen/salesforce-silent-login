@@ -38,6 +38,11 @@ openssl req -new -x509 -key privatekey.pem -out publickey.cer -days 3650 \
 
 ## Create Connected App
 
+Go to: Setup -> Apps -> App Manager and click the New Connected App button.
+
+
+Setup -> Apps -> Connected Apps -> Mange Connected Apps and click edit next to the apps name.
+
 ## User Setup
 
 Set OAuth policies (users are pre-authorized etc.) and add Connected App to relevant profiles.
