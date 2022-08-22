@@ -14,6 +14,8 @@ export const TOKEN_PATH = '/services/oauth2/token'
 
 /**
  * 
+ * @abstract Helper to exchange signed JWT for access token
+ * 
  * @param {string} token JWT to be exchanged for access token
  * @param {string} tokenUrl The Salesforce token endpoint. For Experience Cloud login this is the site url including context path.
  * @returns Salesforce token response or error information object. <response-object>.ok is set to true if token request succeeded,

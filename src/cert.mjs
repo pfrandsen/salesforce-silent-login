@@ -3,6 +3,8 @@ import * as fs from 'fs'
 
 /**
  * 
+ * @abstract Helper to load JWT signing/private key, certificate (for signing verification), and optionally X.509 fingerprint
+ * 
  * @param {string} filePath The path to location where certificate/key information is stored. The private key
  *                          must be named "privatekey.pem", the certificate (public key) must be named "publickey.cer".
  *                          If there is a files named "fingerprint" it is assumed to be in the openssl x509 fingerprint
