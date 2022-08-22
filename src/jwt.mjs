@@ -42,7 +42,7 @@ const algorithm = "RS256" // Salesforce only supports RS256
         "info": undefined,
         "error": undefined
     }
-    // verify that it was signed correctly
+    // verify that it was signed correctly with a private key that matches the public certificate
     const verifyOptions = {
         issuer,
         subject,
