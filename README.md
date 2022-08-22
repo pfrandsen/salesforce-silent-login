@@ -16,7 +16,10 @@ Generate certificate and get public key
 openssl genrsa -out privatekey.pem 1024
 openssl req -new -x509 -key privatekey.pem -out publickey.cer -days 3650 \
         -subj "/C=DK/ST=Aalborg/L=Aalborg/O=pfrandsen/OU=Development/CN=pfrandsen.dk"
+# optionally generate fingerprint
+openssl x509 -in publickey.cer -noout -fingerprint > fingerprint
 ```
+
 
 
 | Field    | Meaning             | Example      |
@@ -41,6 +44,6 @@ Set OAuth policies (users are pre-authorized etc.) and add Connected App to rele
 
 ## Tools
 
-https://oauthdebugger.com/debug
-https://jwt.io/
+* https://oauthdebugger.com/debug
+* https://jwt.io/
 
