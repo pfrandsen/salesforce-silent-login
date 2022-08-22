@@ -1,4 +1,4 @@
-import { jwt } from 'jsonwebtoken' // https://www.npmjs.com/package/jsonwebtoken
+import jwt from 'jsonwebtoken' // https://www.npmjs.com/package/jsonwebtoken
 
 const expiresIn = 5 * 60  // must expire within 5 minutes for Salesforce
 const algorithm = "RS256" // Salesforce only supports RS256
