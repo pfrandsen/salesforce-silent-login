@@ -1,5 +1,5 @@
-import { path } from 'path'
-import { fs } from 'fs'
+import * as path from 'path'
+import * as fs from 'fs'
 
 /**
  * 
@@ -23,6 +23,7 @@ export function getCertInfo(filePath) {
         certificate = fs.readFileSync(certificatePath, 'utf8')
     }
     if (fs.existsSync(fpPath)) {
+        // convert file content "SHA1 Fingerprint=E6:F9:...:5D:32" to "E6F9...5D32"
         const buff = Buffer.from(fs.readFileSync(fpPath, 'utf8').split('=')[1].replaceAll(':', ''))
         fingerprint = buff.toString('base64url')
     }
