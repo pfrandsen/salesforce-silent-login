@@ -10,6 +10,8 @@ cd cert
 
 Generate private key and certificate 
 
+See [docs/cert](docs/cert) for example.
+
 ```bash
 openssl genrsa -out privatekey.pem 1024
 openssl req -new -x509 -key privatekey.pem -out publickey.cer -days 3650 \
