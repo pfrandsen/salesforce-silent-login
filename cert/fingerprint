@@ -1,0 +1,2 @@
+Replace by running:
+  openssl x509 -in publickey.cer -noout -fingerprint > fingerprint

@@ -1,0 +1,2 @@
+Replace by running:
+  openssl req -new -x509 -key privatekey.pem -out publickey.cer -days 3650 -subj "/C=../ST=../L=../O=../OU=../CN=.."
