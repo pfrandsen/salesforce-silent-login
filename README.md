@@ -118,7 +118,7 @@ The response will look like
 
 To access the Experience Cloud site open url like the ones given below.
 ```javascript
-const retUrl = '<relative-site-path>
+const retUrl = '<relative-site-path>'
 // use this to deep link into the Experience Clod site
 const url = `${tokenResponse.sfdc_community_url}/secur/frontdoor.jsp?sid=${tokenResponse.access_token}&retURL=${retUrl}`
 // use this to go to the default start page in the Experience Clod site
