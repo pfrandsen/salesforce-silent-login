@@ -65,14 +65,14 @@ console.log('tokenResponse', tokenResponse)
 The response will look like
 ```json
 {
-  access_token: '00D2...S9C',
-  sfdc_community_url: 'https://<sandbox-name>.sandbox.my.site.com/<experience-cloud-site>',
-  sfdc_community_id: '0DB5p000000k9n9GAA',
-  scope: 'web api',
-  instance_url: 'https://<sandbox-name>.sandbox.my.salesforce.com',
-  id: 'https://test.salesforce.com/id/00...AS/00...AK',
-  token_type: 'Bearer',
-  ok: true
+  "access_token": "00D2...S9C",
+  "sfdc_community_url": "https://<sandbox-name>.sandbox.my.site.com/<experience-cloud-site>",
+  "sfdc_community_id": "0DB5p000000k9n9GAA",
+  "scope": "web api",
+  "instance_url": "https://<sandbox-name>.sandbox.my.salesforce.com",
+  "id": "https://test.salesforce.com/id/00...AS/00...AK",
+  "token_type": "Bearer",
+  "ok": true
 }
 ```
 
