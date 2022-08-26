@@ -1,23 +1,24 @@
-# salesforce-silent-login
+# Salesforce Silent Login
 
-## Generate Certifikate
+## Generate Crypto Keys
 
 Create folder for public/private key pair
 ```bash
-mkdir jwt
-cd jwt
 mkdir cert
 cd cert
 ```
 
-Generate certificate and get public key
+Generate private key and certificate 
+
+See [docs/cert](docs/cert) for example.
 
 ```bash
 openssl genrsa -out privatekey.pem 1024
 openssl req -new -x509 -key privatekey.pem -out publickey.cer -days 3650 \
         -subj "/C=DK/ST=Aalborg/L=Aalborg/O=pfrandsen/OU=Development/CN=pfrandsen.dk"
+# optionally generate fingerprint
+openssl x509 -in publickey.cer -noout -fingerprint > fingerprint
 ```
-
 
 | Field    | Meaning             | Example      |
 |----------|:-------------------:|--------------|
@@ -37,10 +38,10 @@ Setup -> Apps -> Connected Apps -> Mange Connected Apps and click edit next to t
 
 ## User Setup
 
-Set OAuth policies (users are pre-authorized etc.) and add Connected App to relevant profiles.
+Set OAuth policies (users are pre-authorized etc.) and add Connected App to relevant permission sets and/or profiles.
 
 ## Tools
 
-https://oauthdebugger.com/debug
-https://jwt.io/
+* https://oauthdebugger.com/debug
+* https://jwt.io/
 

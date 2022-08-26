@@ -1,0 +1,4 @@
+Replace by running:
+  openssl x509 -in publickey.cer -noout -fingerprint > fingerprint
+Example:
+SHA1 Fingerprint=1C:FD:DF:D2:89:6F:EA:85:58:BC:A3:38:CD:18:71:2C:B8:FD:F8:38

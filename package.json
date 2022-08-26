@@ -1,0 +1,22 @@
+{
+    "name": "salesforce-silent-login",
+    "description": "Generates a JWT for use with the Salesforce JWT OAuth Flow and use this to get access token for Salesforce or Experience Cloud user",
+    "author": "Peter Frandsen <pfrandsen@gmail.com>",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "index.js",
+    "license": "MIT",
+    "homepage": "https://github.com/pfrandsen/salesforce-silent-login#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pfrandsen/salesforce-silent-login.git"
+    },
+    "bugs": {
+        "url": "https://github.com/pfrandsen/salesforce-silent-login/issues",
+        "email" : "pfrandsen@gmail.com"
+    },
+    "dependencies": {
+        "jsonwebtoken": "^8.5.1",
+        "node-fetch": "^3.2.10"
+    }
+}
