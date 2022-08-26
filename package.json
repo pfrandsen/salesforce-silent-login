@@ -15,6 +15,12 @@
         "url": "https://github.com/pfrandsen/salesforce-silent-login/issues",
         "email": "pfrandsen@gmail.com"
     },
+    "keywords": [
+        "Salesforce",
+        "JWT",
+        "SSO",
+        "OAuth"
+    ],
     "dependencies": {
         "jsonwebtoken": "^8.5.1",
         "node-fetch": "^3.2.10"
