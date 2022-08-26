@@ -38,8 +38,25 @@ openssl x509 -in publickey.cer -noout -fingerprint > fingerprint
 
 ## Create Connected App
 
-Go to: Setup -> Apps -> App Manager and click the New Connected App button.
+Go to: Setup -> Apps -> App Manager and click *the New Connected App* button.
 
+Check these checkboxes
+* Enable OAuth Settings
+* Use digital signatures
+* Require Secret for Refresh Token Flow
+
+Enter a URL in the *Callback URL* field. It is not used but needs to be set.
+
+Upload the certificate (publickey.cer) generated in the *Generate Crypto Keys* step above.
+
+Select these OAuth scopes
+* Manage user data via APIs (api)
+* Manage user data via Web browsers (web)
+* Perform requests at any time (refresh_token, offline_access)
+
+Click the *Save* button to generate the Con nected App.
+
+![Showing the Connected App Configuration in the Salesforce Setup user interface](/docs/img/NewConnectedApp.png "Connected App Configuration")
 
 Setup -> Apps -> Connected Apps -> Mange Connected Apps and click edit next to the apps name.
 
@@ -86,5 +103,7 @@ const main = `${tokenResponse.sfdc_community_url}/secur/frontdoor.jsp?sid=${toke
 ```
 ## Tools
 
-* https://oauthdebugger.com/debug
 * https://jwt.io/
+* https://token.dev/
+* https://oauthdebugger.com
+* https://oidcdebugger.com (https://recaffeinate.co/post/introducing-openid-connect-debugger/)
