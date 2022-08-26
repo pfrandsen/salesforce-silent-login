@@ -38,14 +38,54 @@ openssl x509 -in publickey.cer -noout -fingerprint > fingerprint
 
 ## Create Connected App
 
-Go to: Setup -> Apps -> App Manager and click the New Connected App button.
+Go to: Setup -> Apps -> App Manager and click *the New Connected App* button.
 
+Configure the new Connected App
 
-Setup -> Apps -> Connected Apps -> Mange Connected Apps and click edit next to the apps name.
+![Showing the Connected App Configuration in the Salesforce Setup user interface](/docs/img/NewConnectedApp.png "Connected App Configuration")
+
+Check these checkboxes
+* Enable OAuth Settings
+* Use digital signatures
+* Require Secret for Refresh Token Flow
+
+Enter a URL in the *Callback URL* field. It is not used but needs to be set.
+
+Upload the certificate (publickey.cer) generated in the *Generate Crypto Keys* step above.
+
+Select these OAuth scopes
+* Manage user data via APIs (api)
+* Manage user data via Web browsers (web)
+* Perform requests at any time (refresh_token, offline_access)
+
+Click the *Save* button to generate the Con nected App. After clicking the button it will take a few minutes before the Connected App is ready. Just click *Continue*.
+
+![Showing the Connected App creation information screen](/docs/img/WaitingForConnectedApp.png "Connected App creation in progress")
+
+### Set OAuth Policies
+
+Go to: Setup -> Apps -> Connected Apps -> Mange Connected Apps and click edit next to the apps name.
+
+![Showing the Connected App OAuth policies screen](/docs/img/OAuthPolicies.png "OAuth policies")
+
+Set the OAuth policies that are relevant for your scenarion (e.g., users are pre-authorized etc.) and click the *Save* button.
+
+### Get Client Id (and optionally secret)
+
+Go to: Go to: Setup -> Apps -> App Manager and click the *View* option in the dropdown list next to the Connected App name.
+Then click the *Manage Consumer Details* (you will be asked to confirm with two factor authentication).
+
+![Showing the screen where consumer details can be accessed from](/docs/img/ManageConsumerDetails.png "Access consumer details")
+
+In the screen that is shown after two factor authentication you can see (and copy) the *Consumer Key* (Client Id in OAuth 2 terminology) and the *Consumer Secret* (Client Secret).
+
+![Showing the consumer key and secret screen](/docs/img/IdAndSecret.png "Consumer key and secret")
 
 ## User Setup
 
-Set OAuth policies (users are pre-authorized etc.) and add Connected App to relevant permission sets and/or profiles.
+For the scenario where the Connected App is used as a Single SignOn solution for a trusted external application to e.g., deep link into a Experience Cloud site, it is recommendet to add the Connected App to the Experience Cloud user profile.
+
+For the scenario where the Connected App is used to impersonate internal users, e.g., to run UI tests, it is recommended to add the Connected App to a Permission Set that is assigned to specific (test) users.
 
 ## Example Code
 
@@ -86,5 +126,7 @@ const main = `${tokenResponse.sfdc_community_url}/secur/frontdoor.jsp?sid=${toke
 ```
 ## Tools
 
-* https://oauthdebugger.com/debug
 * https://jwt.io/
+* https://token.dev/
+* https://oauthdebugger.com
+* https://oidcdebugger.com (https://recaffeinate.co/post/introducing-openid-connect-debugger/)
