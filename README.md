@@ -58,7 +58,7 @@ Select these OAuth scopes
 * Manage user data via Web browsers (web)
 * Perform requests at any time (refresh_token, offline_access)
 
-Click the *Save* button to generate the Con nected App. After clicking the button it will take a few minutes before the Connected App is ready. Just click *Continue*.
+Click the *Save* button to generate the Connected App. After clicking the button it will take a few minutes before the Connected App is ready. Just click *Continue*.
 
 ![Showing the Connected App creation information screen](/docs/img/WaitingForConnectedApp.png "Connected App creation in progress")
 
@@ -83,7 +83,10 @@ In the screen that is shown after two factor authentication you can see (and cop
 
 ## User Setup
 
-For the scenario where the Connected App is used as a Single SignOn solution for a trusted external application to e.g., deep link into a Experience Cloud site, it is recommendet to add the Connected App to the Experience Cloud user profile.
+**Note**: This technology allows the owner of the private key to impersonate users and it is therefore very
+important to protect this key. It was developed to be able to provide Single SingOn (SSO) between trusted applications and to be able to perform automated UI tests with different user profiles.
+
+For the scenario where the Connected App is used as a Single SignOn solution for a trusted external application to e.g., deep link into a Experience Cloud site, it is recommended to add the Connected App to the Experience Cloud user profile(s). When you have a large number of users, as is often the case with Experience Cloud, permission sets are a real hassle as assignment to users are difficult to automate.
 
 For the scenario where the Connected App is used to impersonate internal users, e.g., to run UI tests, it is recommended to add the Connected App to a Permission Set that is assigned to specific (test) users.
 
@@ -130,3 +133,4 @@ const main = `${tokenResponse.sfdc_community_url}/secur/frontdoor.jsp?sid=${toke
 * https://token.dev/
 * https://oauthdebugger.com
 * https://oidcdebugger.com (https://recaffeinate.co/post/introducing-openid-connect-debugger/)
+* [OpenSSL Quick Reference Guide](https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.htm)
